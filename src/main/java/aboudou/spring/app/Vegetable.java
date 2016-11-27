@@ -23,6 +23,8 @@ public class Vegetable {
 
 	public String talkAboutYourself() {
 		String speech = "Hi I am a vegetable";
+		
+		//Give the name only if the name is set
 		if (this.myName != null && this.myName != "") {
 			speech += " and my name is " + this.myName;
 		}
