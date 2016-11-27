@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="fruit" class="aboudou.spring.app.Fruit"></bean>
@@ -14,7 +14,11 @@
 	<bean id="vegetablewithName" class="aboudou.spring.app.Vegetable">
 		<property name="myName" value="Brocolli"></property>
 	</bean>
-	
+
+	<bean id="vegUsingPNameSpace" class="aboudou.spring.app.Vegetable" p:myName="Squash">
+		
+	</bean>
+
 	<bean id="fruitWithListAndMap" class="aboudou.spring.app.Fruit">
 		<property name="fruitNameList">
 			<list>
@@ -23,7 +27,7 @@
 				<value>orange</value>
 			</list>
 		</property>
-		
+
 		<property name="fruitNameMap">
 			<map>
 				<entry key="apple" value="red"></entry>
