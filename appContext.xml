@@ -4,19 +4,23 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="fruit" class="aboudou.spring.app.Fruit"></bean>
-
+	<bean id="vegetable" class="aboudou.spring.app.Vegetable"></bean>
+	<bean id="meat" class="aboudou.spring.app.Meat"></bean>
+	<bean id="dairy" class="aboudou.spring.app.Dairy"></bean>
+	<bean id="grain" class="aboudou.spring.app.Grain"></bean>
+	
+	
 	<bean id="fruitwithName" class="aboudou.spring.app.Fruit">
 		<constructor-arg index="0" value="apple"></constructor-arg>
 	</bean>
-
-	<bean id="vegetable" class="aboudou.spring.app.Vegetable"></bean>
 
 	<bean id="vegetablewithName" class="aboudou.spring.app.Vegetable">
 		<property name="myName" value="Brocolli"></property>
 	</bean>
 
-	<bean id="vegUsingPNameSpace" class="aboudou.spring.app.Vegetable" p:myName="Squash">
-		
+	<bean id="vegUsingPNameSpace" class="aboudou.spring.app.Vegetable"
+		p:myName="Squash">
+
 	</bean>
 
 	<bean id="fruitWithListAndMap" class="aboudou.spring.app.Fruit">
@@ -35,5 +39,13 @@
 				<entry key="orange" value="orange"></entry>
 			</map>
 		</property>
+	</bean>
+
+	<bean id="meal" class="aboudou.spring.app.Meal">
+		<property name="fruit" ref="fruit"></property>
+		<property name="meat" ref="meat"></property>
+		<property name="dairy" ref="dairy"></property>
+		<property name="grain" ref="grain"></property>
+		<property name="vegetable" ref="vegetable"></property>
 	</bean>
 </beans>

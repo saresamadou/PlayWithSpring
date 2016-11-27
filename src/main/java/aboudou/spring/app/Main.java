@@ -11,7 +11,7 @@ public class Main {
 		ApplicationContext context = new FileSystemXmlApplicationContext("appContext.xml");
 		
 		//Get bean from the context
-		Fruit fruit = context.getBean("fruit", Fruit.class);
+		/*Fruit fruit = context.getBean("fruit", Fruit.class);
 		Vegetable vegtable = context.getBean("vegetable", Vegetable.class);
 		Fruit fruitwithName = context.getBean("fruitwithName", Fruit.class);
 		Vegetable vegtablewithName = context.getBean("vegetablewithName", Vegetable.class);
@@ -24,7 +24,10 @@ public class Main {
 		System.out.println(fruitwithName.talkAboutYourself());
 		System.out.println(vegtablewithName.talkAboutYourself());
 		System.out.println(fruitWithListAndMap.talkAboutYourself());
-		System.out.println(vegUsingPNameSpace.talkAboutYourself());
+		System.out.println(vegUsingPNameSpace.talkAboutYourself());*/
+		
+		Meal meal =(Meal)context.getBean("meal");
+		System.out.println(meal.whatsInThisMeal());
 		
 		//Close the instance of application context
 		((FileSystemXmlApplicationContext) context).close();
