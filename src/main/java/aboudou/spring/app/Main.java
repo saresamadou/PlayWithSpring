@@ -26,7 +26,7 @@ public class Main {
 		System.out.println(fruitWithListAndMap.talkAboutYourself());
 		System.out.println(vegUsingPNameSpace.talkAboutYourself());*/
 		
-		Meal meal =(Meal)context.getBean("meal");
+		Meal meal =(Meal)context.getBean("mealUsingConstructorInj");
 		System.out.println(meal.whatsInThisMeal());
 		
 		//Close the instance of application context

@@ -8,6 +8,19 @@ public class Meal {
 	private Grain grain;
 	private Vegetable vegetable;
 
+	public Meal() {
+
+	}
+
+	public Meal(Fruit fruit, Meat meat, Dairy dairy, Grain grain, Vegetable vegetable) {
+		super();
+		this.fruit = fruit;
+		this.meat = meat;
+		this.dairy = dairy;
+		this.grain = grain;
+		this.vegetable = vegetable;
+	}
+
 	public Fruit getFruit() {
 		return fruit;
 	}
@@ -49,15 +62,20 @@ public class Meal {
 	}
 
 	public String whatsInThisMeal() {
-		
-		String answer="This meal contains :";
-		
-		if(this.dairy!=null) answer+=" some dairy: ";
-		if(this.fruit!=null) answer+=" some fruit: ";
-		if(this.meat!=null) answer+=" some meat: ";
-		if(this.grain!=null) answer+=" some grain: ";
-		if(this.vegetable!=null) answer+=" some vegetable: ";
-		
+
+		String answer = "This meal contains :";
+
+		if (this.dairy != null)
+			answer += " some dairy: ";
+		if (this.fruit != null)
+			answer += " some fruit: ";
+		if (this.meat != null)
+			answer += " some meat: ";
+		if (this.grain != null)
+			answer += " some grain: ";
+		if (this.vegetable != null)
+			answer += " some vegetable: ";
+
 		return answer;
 	}
 }

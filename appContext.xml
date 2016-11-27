@@ -8,8 +8,8 @@
 	<bean id="meat" class="aboudou.spring.app.Meat"></bean>
 	<bean id="dairy" class="aboudou.spring.app.Dairy"></bean>
 	<bean id="grain" class="aboudou.spring.app.Grain"></bean>
-	
-	
+
+
 	<bean id="fruitwithName" class="aboudou.spring.app.Fruit">
 		<constructor-arg index="0" value="apple"></constructor-arg>
 	</bean>
@@ -22,7 +22,8 @@
 		p:myName="Squash">
 
 	</bean>
-
+	
+	<!-- List and map injection -->
 	<bean id="fruitWithListAndMap" class="aboudou.spring.app.Fruit">
 		<property name="fruitNameList">
 			<list>
@@ -41,11 +42,21 @@
 		</property>
 	</bean>
 
+	<!-- Setters injection  -->
 	<bean id="meal" class="aboudou.spring.app.Meal">
 		<property name="fruit" ref="fruit"></property>
 		<property name="meat" ref="meat"></property>
 		<property name="dairy" ref="dairy"></property>
 		<property name="grain" ref="grain"></property>
 		<property name="vegetable" ref="vegetable"></property>
+	</bean>
+
+	<!-- Contructor injection use index or name attribute inside constructor-arg -->
+	<bean id="mealUsingConstructorInj" class="aboudou.spring.app.Meal">
+		<constructor-arg index="0" ref="fruit"></constructor-arg>
+		<constructor-arg index="1" ref="meat"></constructor-arg>
+		<constructor-arg index="2" ref="dairy"></constructor-arg>
+		<constructor-arg index="3" ref="grain"></constructor-arg>
+		<constructor-arg index="4" ref="vegetable"></constructor-arg>
 	</bean>
 </beans>
