@@ -33,7 +33,7 @@ public class Main {
 		System.out.println(mealWithInnerBean.whatsInThisMeal());*/
 		
 	
-		Meal autowiredMeal = context.getBean("beanAutoWiredByConstructor", Meal.class);
+		Meal autowiredMeal = context.getBean("beanWithDefaultAutoWiring", Meal.class);
 		System.out.println(autowiredMeal.whatsInThisMeal());
 		
 		//Close the instance of application context
