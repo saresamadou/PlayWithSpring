@@ -91,4 +91,8 @@
 	destroy-method="destroyMethod">
 		<property name="description" value="Hi I am a fruit"></property>
 	</bean>
+	
+	<bean>
+	
+	</bean>
 </beans>

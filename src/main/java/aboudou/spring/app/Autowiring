@@ -1,0 +1,12 @@
+What is autowring
+	Setting automatically  how beans are connected
+ 	
+ Differen type of 
+ 	byName
+ 	byType
+ 	byConstuctor
+	no
+	default 
+	
+Explicit config overrides auto-wiring config.
+Can be confused

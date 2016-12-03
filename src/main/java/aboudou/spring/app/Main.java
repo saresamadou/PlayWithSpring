@@ -8,7 +8,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		//Get instance of application context
-		ApplicationContext context = new FileSystemXmlApplicationContext("appContext.xml");
+		ApplicationContext context = new FileSystemXmlApplicationContext("autoAppContext.xml");
 		
 		//Get bean from the context
 		/*Fruit fruit = context.getBean("fruit", Fruit.class);
@@ -33,10 +33,9 @@ public class Main {
 		System.out.println(mealWithInnerBean.whatsInThisMeal());*/
 		
 	
+		Meal autowiredMeal = context.getBean("beanAuthowired", Meal.class);
+		System.out.println(autowiredMeal.whatsInThisMeal());
 		
-		
-		Fruit anotherFruit = (Fruit)context.getBean("anotherFruit");
-		System.out.println(anotherFruit.talkAboutYourself());
 		//Close the instance of application context
 		((FileSystemXmlApplicationContext) context).close();
 		
