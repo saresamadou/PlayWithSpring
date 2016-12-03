@@ -26,4 +26,5 @@
 		
 	</bean>
 	
+	<bean id="beanAutoWiredByName" class="aboudou.spring.app.Meal" autowire="byName"></bean>
 </beans>
