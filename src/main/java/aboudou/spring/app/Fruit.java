@@ -8,6 +8,8 @@ public class Fruit {
 	// Class variables
 
 	private String myName;
+	
+	private String description;
 
 	private String definition = "not set !";
 
@@ -28,8 +30,18 @@ public class Fruit {
 
 	// Getters and setters
 
+	
+	
 	public String getMyName() {
 		return myName;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public String getDefinition() {
@@ -91,6 +103,10 @@ public class Fruit {
 			}
 		}
 
+		//Add the description if this variable is set
+		if(this.description!=null && this.description!="") {
+			speech+=this.description;
+		}
 		return speech;
 	}
 	
@@ -98,4 +114,12 @@ public class Fruit {
 		return this.definition;
 	}
 
+	//Init and destroy method
+	public void initMethod() {
+		System.out.println("The fruit bean is reday to go ");
+	}
+	
+	public void destroyMethod() {
+		System.out.println("The fruit bean is about to be destroyed ");
+	}
 }

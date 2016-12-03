@@ -66,15 +66,15 @@ public class Meal {
 		String answer = "This meal contains :";
 
 		if (this.dairy != null)
-			answer += " some dairy: ";
+			answer += " some dairy: " + this.dairy.talkAboutYourself() + "\n";
 		if (this.fruit != null)
-			answer += " some fruit: ";
+			answer += " some fruit: " + this.fruit.talkAboutYourself() + " \n";
 		if (this.meat != null)
-			answer += " some meat: ";
+			answer += " some meat: " + this.meat.talkAboutYourself() + " \n";
 		if (this.grain != null)
-			answer += " some grain: ";
+			answer += " some grain: " + this.grain.talkAboutYourself() + " \n";
 		if (this.vegetable != null)
-			answer += " some vegetable: ";
+			answer += " some vegetable: " + this.vegetable.talkAboutYourself();
 
 		return answer;
 	}

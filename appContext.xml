@@ -69,4 +69,26 @@
 	<bean id="externalFruit" class="aboudou.spring.app.Fruit">
 		<property name="definition" value="${def-fruit}"></property>
 	</bean>	
+	
+	<bean id="mealOutBean" class="aboudou.spring.app.Meal">
+		<property name="fruit">
+			<!-- Inner bean -->
+			<bean id="appleInnerBean" class="aboudou.spring.app.Apple">
+				<property name="name" value="apple"></property>
+				<property name="descrption" value="I am a apple. I am tipically red or green with crisp fresh"></property>
+			</bean>
+		</property>
+		<!-- <property name="meat" value="fruit"></property>
+		<property name="dairy" value="dairy"></property>
+		<property name="grain" value="grain"></property>
+		<property name="vegetable" value="vegetable"></property> -->
+	</bean>
+	
+	<!-- Setting init and destroy Methods on Beans 
+	with scope prototype, destroy method is no longer called -->
+	<bean id="anotherFruit" class="aboudou.spring.app.Fruit" scope="prototype"
+	init-method="initMethod"
+	destroy-method="destroyMethod">
+		<property name="description" value="Hi I am a fruit"></property>
+	</bean>
 </beans>

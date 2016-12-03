@@ -18,6 +18,8 @@ public class Main {
 		Fruit fruitWithListAndMap = (Fruit)context.getBean("fruitWithListAndMap");
 		Vegetable vegUsingPNameSpace = context.getBean("vegUsingPNameSpace", Vegetable.class);
 		Meal meal =(Meal)context.getBean("mealUsingConstructorInj");
+		Fruit fruit = context.getBean("externalFruit", Fruit.class);
+		Meal mealWithInnerBean = (Meal)context.getBean("mealOutBean");
 		
 		//Play with the bean
 		System.out.println(fruit.talkAboutYourself());
@@ -26,14 +28,15 @@ public class Main {
 		System.out.println(vegtablewithName.talkAboutYourself());
 		System.out.println(fruitWithListAndMap.talkAboutYourself());
 		System.out.println(vegUsingPNameSpace.talkAboutYourself());
-		System.out.println(meal.whatsInThisMeal());*/
+		System.out.println(meal.whatsInThisMeal());
+		System.out.println(meal.whatsInThisMeal());
+		System.out.println(mealWithInnerBean.whatsInThisMeal());*/
+		
+	
 		
 		
-		Fruit fruit = context.getBean("externalFruit", Fruit.class);
-		Vegetable vegtable = context.getBean("vegetable", Vegetable.class);
-		System.out.println(vegtable.talkAboutYourself());
-		System.out.println(fruit.talkAboutYourDefinition());
-		
+		Fruit anotherFruit = (Fruit)context.getBean("anotherFruit");
+		System.out.println(anotherFruit.talkAboutYourself());
 		//Close the instance of application context
 		((FileSystemXmlApplicationContext) context).close();
 		
