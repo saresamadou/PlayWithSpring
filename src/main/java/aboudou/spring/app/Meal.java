@@ -8,10 +8,12 @@ public class Meal {
 	private Grain grain;
 	private Vegetable vegetable;
 
+	//Default no args
 	public Meal() {
 
 	}
 
+	//Full meal constructor
 	public Meal(Fruit fruit, Meat meat, Dairy dairy, Grain grain, Vegetable vegetable) {
 		super();
 		this.fruit = fruit;
@@ -21,6 +23,7 @@ public class Meal {
 		this.vegetable = vegetable;
 	}
 
+	//Getters and setters
 	public Fruit getFruit() {
 		return fruit;
 	}
@@ -61,6 +64,10 @@ public class Meal {
 		this.vegetable = vegetable;
 	}
 
+	/**
+	 * Function which talk about what is inside a meal
+	 * @return answer
+	 */
 	public String whatsInThisMeal() {
 
 		String answer = "This meal contains :";

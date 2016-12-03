@@ -9,11 +9,12 @@
 	<bean id="meat" class="aboudou.spring.app.Meat"></bean>
 	<bean id="dairy" class="aboudou.spring.app.Dairy"></bean>
 	<!-- Two Grain bean -->
-	<bean id="grain" class="aboudou.spring.app.Grain" primary="true" ></bean>
-	<bean id="grain2" class="aboudou.spring.app.Grain" autowire-candidate="false"></bean>
+	<bean id="grain" class="aboudou.spring.app.Grain" primary="true"></bean>
+	<bean id="grain2" class="aboudou.spring.app.Grain"
+		autowire-candidate="false"></bean>
 
 
-	<!-- Setters injection  -->
+	<!-- Setters injection -->
 	<bean id="meal" class="aboudou.spring.app.Meal">
 		<property name="fruit" ref="fruit"></property>
 		<property name="meat" ref="meat"></property>
@@ -21,10 +22,14 @@
 		<property name="grain" ref="grain"></property>
 		<property name="vegetable" ref="vegetable"></property>
 	</bean>
-	
-	<bean id="beanAuthowired" class="aboudou.spring.app.Meal" autowire="byType">
-		
+
+	<bean id="beanAuthowired" class="aboudou.spring.app.Meal"
+		autowire="byType">
+
 	</bean>
-	
-	<bean id="beanAutoWiredByName" class="aboudou.spring.app.Meal" autowire="byName"></bean>
+
+	<bean id="beanAutoWiredByName" class="aboudou.spring.app.Meal"
+		autowire="byName"></bean>
+	<bean id="beanAutoWiredByConstructor" class="aboudou.spring.app.Meal"
+		autowire="constructor"></bean>
 </beans>
