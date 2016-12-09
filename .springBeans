@@ -9,6 +9,7 @@
 	<configs>
 		<config>appContext.xml</config>
 		<config>autoAppContext.xml</config>
+		<config>aopcontext.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

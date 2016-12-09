@@ -3,12 +3,14 @@ package aboudou.spring.app;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
+import aboudou.spring.aop.Car;
+
 public class Main {
 
 	public static void main(String[] args) {
 		
 		//Get instance of application context
-		ApplicationContext context = new FileSystemXmlApplicationContext("autoAppContext.xml");
+		ApplicationContext context = new FileSystemXmlApplicationContext("aopcontext.xml");
 		
 		//Get bean from the context
 		/*Fruit fruit = context.getBean("fruit", Fruit.class);
@@ -32,10 +34,9 @@ public class Main {
 		System.out.println(meal.whatsInThisMeal());
 		System.out.println(mealWithInnerBean.whatsInThisMeal());*/
 		
-	
-		Meal autowiredMeal = context.getBean("beanWithDefaultAutoWiring", Meal.class);
-		System.out.println(autowiredMeal.whatsInThisMeal());
-		
+		 Car myCar = context.getBean("car", Car.class);
+		 myCar.drive();
+		 
 		//Close the instance of application context
 		((FileSystemXmlApplicationContext) context).close();
 		

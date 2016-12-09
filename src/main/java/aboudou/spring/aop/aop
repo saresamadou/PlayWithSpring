@@ -1,6 +1,7 @@
 What is aop ?
 	Isolate cross cutting concerns into aspects 
 		Tracing, securing, transaction management 
+		Make application much more clean and much more easy to maintain 
 
 Implementings AOP in Spring
 	Spring AOP 
@@ -18,3 +19,48 @@ Pros/cons
 	AspectJ
 		+ More available joinpoints
 		- Not easy ro set up and use in Spring App
+		
+		
+First situation
+
+	Class A {             
+	//business logic
+	trace()
+	}
+	
+	Class B {
+	//business logic
+	trace()
+	}
+	
+Second situation : centralise logging functionalities
+
+If we remove trace function from both classes and move it to another class
+
+Class AspectClass {
+	trace()
+	}
+Spring will wire the aspect to the class during their execution
+
+
+Aspect 
+	Module that is responsible for providing cross-cutting concern requirements
+Advice 
+	Actual segment of code that implements a cross cutting concerns
+	
+Join Point
+	Potential point in applications execution, where we can plug in an aspect
+
+PointCut
+	One or more joint points where advice should be executed
+Introduction
+	We can declare new methods or attributes to existing classes	
+Target object
+	The objet that is being advised
+Weaving
+	The process of linking aspect with the rest of the application 
+		compile time
+		load time
+		
+Dependencies
+	Spring aspects
