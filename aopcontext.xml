@@ -13,8 +13,12 @@
 	<bean id="log" class="aboudou.spring.aop.Log"></bean>
 	
 	<aop:config>
+	
+		<!-- To reuse the pointcut -->
+		<aop:pointcut expression="execution(void aboudou.spring.aop.Car.drive())" id="carDrvice"/>
+	
 		<aop:aspect id="loggerAspect" ref="log">
-			<aop:before method="vehiculeAboutToMove" pointcut="execution(void aboudou.spring.aop.Car.drive())"/>
+			<aop:before method="vehiculeAboutToMove" pointcut-ref="carDrvice"/>
 		</aop:aspect>
 	</aop:config>
 </beans>

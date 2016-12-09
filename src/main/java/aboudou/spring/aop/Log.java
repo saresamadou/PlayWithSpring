@@ -10,4 +10,8 @@ public class Log {
 	public void vehiculeAboutToMove() {
 		logger.info("Adding to log Car is driving ");
 	}
+	
+	public void vehiculeAboutToStop() {
+		logger.info("Adding to log Car is stopping ");
+	}
 }
