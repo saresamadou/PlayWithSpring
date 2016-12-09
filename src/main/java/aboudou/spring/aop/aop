@@ -1,0 +1,20 @@
+What is aop ?
+	Isolate cross cutting concerns into aspects 
+		Tracing, securing, transaction management 
+
+Implementings AOP in Spring
+	Spring AOP 
+		XML based
+		Annotation based (AspectJ)
+	Other AOP Frameworks 	 
+	
+Pros/cons
+	Spring AOP
+		+ Integrates nicely with Spring Ioc Container
+		+ Easy to set up and use in a Spring Apps 
+		- Can only work method executions as Joinpoints (potentiel place where to 
+		plug an aspect)
+		
+	AspectJ
+		+ More available joinpoints
+		- Not easy ro set up and use in Spring App
