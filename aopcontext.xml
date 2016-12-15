@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:aop="http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
 
 	<context:annotation-config></context:annotation-config>
-	
+
 	<bean id="car" class="aboudou.spring.aop.Car"></bean>
+
+	<!-- Enable aspect discovering -->
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	<context:component-scan base-package="aboudou.spring.aop"></context:component-scan>
+
+	<!-- Enable component scanning -->
+
 	<bean id="log" class="aboudou.spring.aop.Log"></bean>
-	
-	<aop:config>
-	
-		<!-- To reuse the pointcut -->
-		<aop:pointcut expression="execution(void aboudou.spring.aop.Car.drive())" id="carDrvice"/>
-	
-		<aop:aspect id="loggerAspect" ref="log">
-			<aop:before method="vehiculeAboutToMove" pointcut-ref="carDrvice"/>
-		</aop:aspect>
-	</aop:config>
+
+	<!-- <aop:config> To reuse the pointcut <aop:pointcut expression="execution(void 
+		aboudou.spring.aop.Car.drive())" id="carDrvice"/> <aop:aspect id="loggerAspect" 
+		ref="log"> <aop:before method="vehiculeAboutToMove" pointcut-ref="carDrvice"/> 
+		</aop:aspect> </aop:config> -->
 </beans>

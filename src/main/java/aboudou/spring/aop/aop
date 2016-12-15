@@ -64,3 +64,19 @@ Weaving
 		
 Dependencies
 	Spring aspects
+	
+Getting familar with differents advice
+	Before Advice
+	After Returning Advice
+	After Throwing advice
+	After (finally) advice
+	Around advice : both before and after 
+	
+	
+Pointcuts : identify where advice should run ,identify jointputs where advice should be running
+	Signature (name and parameters)
+	
+	
+Pointcut Designators
+	Common designators
+	args, within, execution ...
