@@ -65,7 +65,7 @@ public class Main {
 		 myCar.drive(112);
 		 myCar.drift();
 		 myCar.stop();
-		
+		 
 	/*	Result result = JUnitCore.runClasses(TestJunit1.class);
 		
 		 for(Failure failure : result.getFailures()) {

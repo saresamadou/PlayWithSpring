@@ -16,19 +16,25 @@ public class Log {
 
 	final static Logger logger = LoggerFactory.getLogger(Log.class);
 	
-	@Before("anyMethodExecutionThatReturnAsString() || anyMethodExecutionInCarThatStartWith_dr()")
+	@Before("methodWithStringParameters()")
 	public void vehiculeAboutToMove(JoinPoint jp) {
-		logger.info("Saving to log (form aspect ) vehicule action About to ");
+		logger.info("Saving to log (form aspect )!!! ");
 	}
 	
-	@AfterReturning(pointcut="execution(void aboudou.spring.aop.Car.*(..))")
+	/*@AfterReturning(pointcut="execution(void aboudou.spring.aop.Car.*(..))")
 	public void vehiculeAfterReturning(JoinPoint jp) {
 		logger.info("Leaving the method " + jp.getStaticPart());
-	}
+	}*/
 	
 	@Pointcut("execution(void aboudou.spring.aop.Car.dr*(..))")
 	public void anyMethodExecutionInCarThatStartWith_dr() {}
 	
 	@Pointcut("execution(String *(..))")
 	public void anyMethodExecutionThatReturnAsString() {}
+	
+	@Pointcut("execution(int aboudou.spring.aop.Car.drive(..))")
+	public void methodWhichReturnsOnlyVoid() {}
+	
+	@Pointcut("execution(* aboudou.spring.aop.Car.drive(String))")
+	public void methodWithStringParameters() {}
 }
