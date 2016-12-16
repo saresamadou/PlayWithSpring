@@ -9,6 +9,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import aboudou.spring.aop.Car;
+import aboudou.spring.aop.GolfClub;
 import aboudou.spring.config.AppConfig;
 import aboudou.spring.test.TestJunit1;
 
@@ -60,11 +61,16 @@ public class Main {
 		 myCar.drive(112);*/
 		
 		Car myCar = context.getBean("car", Car.class);
+		GolfClub gc = context.getBean("GolfClub", GolfClub.class);
+		 
 		 myCar.drive();
 		 myCar.drive("heloo woooorld");
-		 myCar.drive(112);
+		 myCar.drive(112, 120);
 		 myCar.drift();
 		 myCar.stop();
+		 
+		 gc.drive();
+		 gc.swing();
 		 
 	/*	Result result = JUnitCore.runClasses(TestJunit1.class);
 		

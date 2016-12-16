@@ -10,6 +10,8 @@
 
 	<bean id="car" class="aboudou.spring.aop.Car"></bean>
 
+	<bean id="GolfClub" class="aboudou.spring.aop.GolfClub"></bean>
+	
 	<!-- Enable aspect discovering -->
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 	<context:component-scan base-package="aboudou.spring.aop"></context:component-scan>

@@ -80,3 +80,17 @@ Pointcuts : identify where advice should run ,identify jointputs where advice sh
 Pointcut Designators
 	Common designators
 	args, within, execution ...
+	
+Spring AOP Poincut designators
+	execution
+	within
+	this - 
+	target 
+	args
+	@target
+	@args
+	@within
+	@annotation
+	bean
+	
+Bean designators is only used in Spring

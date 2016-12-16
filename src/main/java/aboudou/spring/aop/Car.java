@@ -5,17 +5,16 @@ import org.slf4j.LoggerFactory;
 
 public class Car {
 
-	final static Logger logger = LoggerFactory.getLogger(Car.class);
+	static final  Logger logger = LoggerFactory.getLogger(Car.class);
 	
-
 	public void drive() {
 		logger.info("I am driving a car");
 	}
 
-	public int drive(int speed) {
-
-		logger.info("I am driving a car with the speed of  " + speed);
-		return speed;
+	public float drive(int minSpeed, int maxSpeed) {
+		float average = (minSpeed + maxSpeed) /2f;
+		logger.info("I am driving a car with the speed of  " + average);
+		return average;
 	}
 
 	/**
@@ -51,6 +50,10 @@ public class Car {
 		logger.info("Red light, time to stop!");
 
 		return "Red light, time to stop!";
+	}
+	
+	public void stopFourWheel() {
+		logger.info("Stop four wheel !");
 	}
 	
 	
