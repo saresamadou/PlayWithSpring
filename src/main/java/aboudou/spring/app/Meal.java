@@ -1,11 +1,18 @@
 package aboudou.spring.app;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class Meal {
 
+	@Autowired
 	private Fruit fruit;
+	@Autowired
 	private Meat meat;
+	@Autowired
 	private Dairy dairy;
+	@Autowired
 	private Grain grain;
+	@Autowired
 	private Vegetable vegetable;
 
 	//Default no args

@@ -122,4 +122,6 @@ public class Fruit {
 	public void destroyMethod() {
 		System.out.println("The fruit bean is about to be destroyed ");
 	}
+	
+	
 }

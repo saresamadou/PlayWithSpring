@@ -10,6 +10,7 @@ import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import aboudou.spring.aop.Car;
 import aboudou.spring.aop.GolfClub;
+import aboudou.spring.app.enums.Color;
 import aboudou.spring.config.AppConfig;
 import aboudou.spring.test.TestJunit1;
 
@@ -31,7 +32,7 @@ public class Main {
 		 final  Logger logging = LoggerFactory.getLogger(Main.class);
 		
 		//Get instance of xml application context
-		ApplicationContext context = new FileSystemXmlApplicationContext("aopcontext.xml");
+		ApplicationContext context = new FileSystemXmlApplicationContext("appContext.xml");
 		
 		//Get an instance of java based configuration file
 		//ApplicationContext javaBasedContext = new AnnotationConfigApplicationContext(AppConfig.class);
@@ -58,7 +59,7 @@ public class Main {
 		System.out.println(meal.whatsInThisMeal());
 		System.out.println(meal.whatsInThisMeal());
 		System.out.println(mealWithInnerBean.whatsInThisMeal());
-		 myCar.drive(112);*/
+		 myCar.drive(112);
 		
 		Car myCar = context.getBean("car", Car.class);
 		GolfClub gc = context.getBean("GolfClub", GolfClub.class);
@@ -70,7 +71,7 @@ public class Main {
 		 myCar.stop();
 		 
 		 gc.drive();
-		 gc.swing();
+		 gc.swing();*/
 		 
 	/*	Result result = JUnitCore.runClasses(TestJunit1.class);
 		
@@ -80,11 +81,17 @@ public class Main {
 		 
 		 logging.info("Test successfulnes " + result.wasSuccessful());*/
 		 
+		
+		Meal myAnnotatedSpringMeal = context.getBean("mealByAnnotation", Meal.class);
+		System.out.println(myAnnotatedSpringMeal.whatsInThisMeal());
 		//Close the instance of application context
 		((FileSystemXmlApplicationContext) context).close();
 		
 		//Close the java based application context
 		//((AnnotationConfigApplicationContext)javaBasedContext).close();
+		
+		
+		//Test the enum class
 		
 	}
 }

@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+
+	<!-- To let spring know that we are using annotation -->
+	<context:annotation-config />
 
 	<bean id="fruit" class="aboudou.spring.app.Fruit"></bean>
 	<bean id="vegetable" class="aboudou.spring.app.Vegetable"></bean>
@@ -12,6 +15,8 @@
 	<bean id="dairy" class="aboudou.spring.app.Dairy"></bean>
 	<bean id="grain" class="aboudou.spring.app.Grain"></bean>
 
+	<bean id="mealByAnnotation" class="aboudou.spring.app.Meal">
+	</bean>
 
 	<bean id="fruitwithName" class="aboudou.spring.app.Fruit">
 		<constructor-arg index="0" value="apple"></constructor-arg>
@@ -25,7 +30,7 @@
 		p:myName="Squash">
 
 	</bean>
-	
+
 	<!-- List and map injection -->
 	<bean id="fruitWithListAndMap" class="aboudou.spring.app.Fruit">
 		<property name="fruitNameList">
@@ -45,7 +50,9 @@
 		</property>
 	</bean>
 
-	<!-- Setters injection  -->
+
+
+	<!-- Setters injection -->
 	<bean id="meal" class="aboudou.spring.app.Meal">
 		<property name="fruit" ref="fruit"></property>
 		<property name="meat" ref="meat"></property>
@@ -62,37 +69,32 @@
 		<constructor-arg index="3" ref="grain"></constructor-arg>
 		<constructor-arg index="4" ref="vegetable"></constructor-arg>
 	</bean>
-	
+
 	<!-- External Property file -->
-	<context:property-placeholder location="src/main/java/myApp.properties"/>
+	<context:property-placeholder location="src/main/java/myApp.properties" />
 	<!-- beans using external properties files -->
 	<bean id="externalFruit" class="aboudou.spring.app.Fruit">
 		<property name="definition" value="${def-fruit}"></property>
-	</bean>	
-	
+	</bean>
+
 	<bean id="mealOutBean" class="aboudou.spring.app.Meal">
 		<property name="fruit">
 			<!-- Inner bean -->
 			<bean id="appleInnerBean" class="aboudou.spring.app.Apple">
 				<property name="name" value="apple"></property>
-				<property name="descrption" value="I am a apple. I am tipically red or green with crisp fresh"></property>
+				<property name="descrption"
+					value="I am a apple. I am tipically red or green with crisp fresh"></property>
 			</bean>
 		</property>
-		<!-- <property name="meat" value="fruit"></property>
-		<property name="dairy" value="dairy"></property>
-		<property name="grain" value="grain"></property>
-		<property name="vegetable" value="vegetable"></property> -->
+		<!-- <property name="meat" value="fruit"></property> <property name="dairy" 
+			value="dairy"></property> <property name="grain" value="grain"></property> 
+			<property name="vegetable" value="vegetable"></property> -->
 	</bean>
-	
-	<!-- Setting init and destroy Methods on Beans 
-	with scope prototype, destroy method is no longer called -->
+
+	<!-- Setting init and destroy Methods on Beans with scope prototype, destroy 
+		method is no longer called -->
 	<bean id="anotherFruit" class="aboudou.spring.app.Fruit" scope="prototype"
-	init-method="initMethod"
-	destroy-method="destroyMethod">
+		init-method="initMethod" destroy-method="destroyMethod">
 		<property name="description" value="Hi I am a fruit"></property>
-	</bean>
-	
-	<bean>
-	
 	</bean>
 </beans>
